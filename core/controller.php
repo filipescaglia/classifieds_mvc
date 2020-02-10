@@ -1,0 +1,19 @@
+<?php
+
+class controller {
+
+    public function loadView($viewName, $viewData = array()) {
+        extract($viewData); // Pega os índices do array e transforma em variável
+        require_once 'views/' . $viewName . '.php';
+    }
+
+    public function loadTemplate($viewName, $viewData = array()) {
+        require_once 'views/template.php';
+    }
+
+    public function loadViewInTemplate($viewName, $viewData = array()) {
+        extract($viewData);
+        require_once 'views/' . $viewName . '.php';
+    }
+
+}
